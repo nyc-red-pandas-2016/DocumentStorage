@@ -1,0 +1,14 @@
+<div class="one-document">
+  <article class="">
+    <h4><%=  @document.title%></h4>
+
+    <p>
+      <%= @document.body%>
+    </p>
+
+    <div class="buttons">
+      <%= link_to "Delete" , method: 'delete', class: 'button'%>
+      <%= link_to "Edit", edit_document_path(@document), class: 'button'%>
+    </div>
+  </article>
+</div>

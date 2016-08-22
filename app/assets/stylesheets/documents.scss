@@ -1,0 +1,45 @@
+// Place all the styles related to the Documents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$color: #456456;
+
+.form {
+  margin: 0 auto;
+  width: 60%;
+
+  .title {
+    width: 220px;
+  }
+  .body {
+    width: 220px;
+    height: 300px;
+  }
+}
+
+
+.documents, .one-document {
+  margin: 0 auto;
+  width: 60%;
+
+
+  article {
+    border-bottom: solid 1px #ccc;
+    color: $color;
+  }
+
+
+  .buttons {
+    text-align: center;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      border: solid 1px #ccc;
+
+      border-radius: 3px;
+      padding: 10px 20px 10px 20px;
+    }
+  }
+}

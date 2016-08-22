@@ -1,0 +1,10 @@
+<%= form_for @document do |f| %>
+
+  <%= f.label :title, class: "title"%>
+  <%= f.text_field :title, class: 'title', required: true%>
+  </br>
+  <%= f.label :body, class: "body"%>
+  <%= f.text_area :body, class: 'body'%>
+  </br>
+  <%= f.submit %>
+<% end %>
