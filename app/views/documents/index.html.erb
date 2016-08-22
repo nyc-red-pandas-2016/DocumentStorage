@@ -1,11 +1,20 @@
 <div class="documents">
+  <div class="notice">
+    <% if flash[:notice] %>
+     <p>
+       <%= flash[:notice]%>
+     </p>
+    <% end %>
+  </div>
   <% @documents.each do |doc| %>
     <article class="doc">
+      <%= link_to doc do %>
       <h4><%= doc.title%></h4>
       <p>
-        <%= truncate(doc.body, length:  50) %>
+        <%= truncate(doc.body, length:  100) %>
       </p>
-    <%= link_to 'Show', document_path(doc) %>
+      <p class='time'><%= time_ago_in_words(doc.created_at)%> ago</p>
+      <% end %>
     </article>
   <% end %>
 </div>

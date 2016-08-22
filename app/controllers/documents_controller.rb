@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
 
-  before_action :find_document, only: [:show, :edit, :update]
+  before_action :find_document, only: [:show, :edit, :update, :destroy]
 
   def index
     @documents = Document.all.order("created_at DESC")
@@ -17,7 +17,8 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(document_params)
     if @document.save
-      redirect_to documents_path
+      flash[:notice] = "Post successfully created"
+      redirect_to @document
     else
       render 'new'
     end
@@ -33,6 +34,10 @@ class DocumentsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @document.destroy
+    redirect_to root_path, flash: {notice: 'Document was successfully deleted!'}
+  end
 
 
   private

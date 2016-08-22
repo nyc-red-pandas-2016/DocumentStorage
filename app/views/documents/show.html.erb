@@ -1,13 +1,16 @@
 <div class="one-document">
+  <div class="notice">
+    <% if flash[:notice] %>
+     <p>
+       <%= flash[:notice]%>
+     </p>
+    <% end %>
+  </div>
   <article class="">
     <h4><%=  @document.title%></h4>
-
-    <p>
-      <%= @document.body%>
-    </p>
-
+    <p><%= @document.body%></p>
     <div class="buttons">
-      <%= link_to "Delete" , method: 'delete', class: 'button'%>
+      <%= link_to "Delete" , document_path(@document), method: :delete, class: 'button'%>
       <%= link_to "Edit", edit_document_path(@document), class: 'button'%>
     </div>
   </article>

@@ -14,15 +14,40 @@
  *= require_self
  */
 
+ .navigation {
+   background-color: #456456;
+   height: 70px;
 
-
- nav {
-   ul li{
-     display: inline;
+   .left {
+     float: left;
+     width: 28%;
+     font-size: 32px;
      margin-left: 20px;
+     margin-top: 10px;
+     color: white;
+   }
+
+   .right {
+     float: right;
+     width: 70%;
+     font-size: 20px;
+     text-align: right;
+
+     ul li {
+       display: inline;
+       margin-right: 40px;
+     }
 
      a {
        text-decoration: none;
+       color: white;
+
+       &:hover {
+         color: #ccc;
+        //  font-size: 21px;
+         cursor: pointer;
+       }
      }
    }
+
  }
