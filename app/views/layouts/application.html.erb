@@ -14,8 +14,14 @@
       <aside class="left">Storage</aside>
       <aside class="right">
         <ul>
-          <li><%= link_to "Home", root_path%></li>
-          <li><%= link_to "Create Document", new_document_path%></li>
+          <% if login? %>
+            <li><%= link_to "Home", root_path%></li>
+            <li><%= link_to "Create Document", new_document_path%></li>
+            <li><%= link_to "Logout", sessions_logout_path%></li>
+          <% else %>
+            <li><%= link_to "Register", users_new_path%></li>
+            <li><%= link_to "Login", sessions_login_path%></li>
+          <% end %>
         </ul>
       </aside>
     </div>

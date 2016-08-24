@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
 
   before_action :find_document, only: [:show, :edit, :update, :destroy]
 
+
   def index
     @documents = Document.all.order("created_at DESC")
   end
@@ -49,6 +50,8 @@ class DocumentsController < ApplicationController
     def document_params
       params.require(:document).permit(:title, :body)
     end
+
+
 
 
 end
